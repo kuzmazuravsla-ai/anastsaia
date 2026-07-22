@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #0b0f19;
+    --bg-card: #151c2e;
+    --bg-card-hover: #1e293b;
+    --border-color: #2a364f;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --accent-glow: rgba(59, 130, 246, 0.25);
+    --badge-bg: rgba(59, 130, 246, 0.15);
+    --live-red: #ef4444;
+  }
+
+  /* Light Theme */
+  .theme-light {
+    --bg-main: #f1f5f9;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f8fafc;
+    --border-color: #e2e8f0;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --accent-glow: rgba(37, 99, 235, 0.15);
+    --badge-bg: rgba(37, 99, 235, 0.1);
+    --live-red: #dc2626;
+  }
+
+  /* Cyber Blue Theme */
+  .theme-blue {
+    --bg-main: #030712;
+    --bg-card: #0b1528;
+    --bg-card-hover: #112240;
+    --border-color: #1e3a8a;
+    --text-primary: #f0fdf4;
+    --text-secondary: #93c5fd;
+    --accent: #06b6d4;
+    --accent-hover: #0891b2;
+    --accent-glow: rgba(6, 182, 212, 0.3);
+    --badge-bg: rgba(6, 182, 212, 0.15);
+    --live-red: #f43f5e;
+  }
+
+  /* Emerald Energy Theme */
+  .theme-emerald {
+    --bg-main: #022c22;
+    --bg-card: #064e3b;
+    --bg-card-hover: #047857;
+    --border-color: #065f46;
+    --text-primary: #ecfdf5;
+    --text-secondary: #a7f3d0;
+    --accent: #10b981;
+    --accent-hover: #059669;
+    --accent-glow: rgba(16, 185, 129, 0.3);
+    --badge-bg: rgba(16, 185, 129, 0.15);
+    --live-red: #ef4444;
+  }
+
+  /* Sunset Theme */
+  .theme-sunset {
+    --bg-main: #180d1e;
+    --bg-card: #281432;
+    --bg-card-hover: #3b1c49;
+    --border-color: #522365;
+    --text-primary: #fff7ed;
+    --text-secondary: #f472b6;
+    --accent: #f97316;
+    --accent-hover: #ea580c;
+    --accent-glow: rgba(249, 115, 22, 0.3);
+    --badge-bg: rgba(249, 115, 22, 0.15);
+    --live-red: #f43f5e;
+  }
+
+  /* OLED Pitch Black Theme */
+  .theme-oled {
+    --bg-main: #000000;
+    --bg-card: #0a0a0a;
+    --bg-card-hover: #171717;
+    --border-color: #262626;
+    --text-primary: #ffffff;
+    --text-secondary: #a3a3a3;
+    --accent: #e11d48;
+    --accent-hover: #be123c;
+    --accent-glow: rgba(225, 29, 72, 0.3);
+    --badge-bg: rgba(225, 29, 72, 0.15);
+    --live-red: #f43f5e;
+  }
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Pulsing Live indicator animation */
+@keyframes livePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+.animate-live-pulse {
+  animation: livePulse 1.8s infinite ease-in-out;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+}
+
+.custom-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-card:hover {
+  background-color: var(--bg-card-hover);
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px var(--accent-glow);
+}

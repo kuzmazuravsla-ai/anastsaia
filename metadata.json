@@ -1,0 +1,6 @@
+{
+  "name": "Кожухівка ТВ",
+  "description": "Професійний веб-сервіс Live TV з підтриманням HLS, M3U плейлистів, EPG та гнучкими темами",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
